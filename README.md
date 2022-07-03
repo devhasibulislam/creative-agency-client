@@ -1,4 +1,8 @@
 # Creative Agency Client-Side
+
+## Technologies used here
+* react.js
+
 ## Owing this project
 `make sure have install VSCODE`
 ```bash
