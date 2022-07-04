@@ -29,7 +29,7 @@ const Header = () => {
                     >
                         Dashboard
                     </Link>
-                    <button id='authenticate-btn'>
+                    <button id='authenticate-btn' className='btn btn-dark'>
                         <Link
                             to='/login'
                         >
