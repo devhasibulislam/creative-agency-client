@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root{
+:root {
   --transition-delay: all .5s linear;
   --primary-color: #FBD062;
   --default-radius: 5px;
+  --focus-words: #7AB259;
 }
 
-::selection{
+::selection {
   background-color: red;
   color: white;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -27,7 +28,7 @@ a {
 }
 
 /* Header section */
-#header-section{
+#header-section {
   background-color: var(--primary-color);
 }
 
@@ -41,11 +42,11 @@ a {
   gap: 1rem;
 }
 
-.header-item{
+.header-item {
   transition: var(--transition-delay);
 }
 
-.header-item:hover{
+.header-item:hover {
   color: white;
 }
 
@@ -64,29 +65,30 @@ a {
   background-color: white;
 }
 
-#authenticate-btn:hover a{
+#authenticate-btn:hover a {
   color: black;
 }
 
 /* Contact section */
-#contact-section{
+#contact-section {
   background-color: var(--primary-color);
   padding: 63px 0;
 }
 
-#matched-btn{
+#matched-btn {
   height: 45px;
   width: 170px;
   border-radius: var(--default-radius);
   transition: var(--transition-delay);
 }
 
-#matched-btn:hover{
+#matched-btn:hover {
   background-color: white;
   color: black;
 }
 
-input, textarea{
+input,
+textarea {
   width: 100%;
   height: 70px;
   border-radius: var(--default-radius);
@@ -95,12 +97,12 @@ input, textarea{
   padding: 30px;
 }
 
-textarea{
+textarea {
   height: 277px;
 }
 
 /* landing page seciton */
-#landing-section{
+#landing-section {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom left;
@@ -108,31 +110,31 @@ textarea{
   margin-top: -4.5rem;
 }
 
-@media only screen and (max-width: 1024px){
-  #landing-section{
+@media only screen and (max-width: 1024px) {
+  #landing-section {
     margin-top: 0;
   }
 }
 
 /* banner section */
-#banner-title{
+#banner-title {
   font-weight: 700;
   font-size: 48px;
   line-height: 60px;
   margin-bottom: 23px;
 }
 
-#banner-desc{
+#banner-desc {
   margin-bottom: 23px;
   font-weight: 400;
   line-height: 24px;
 }
 
-#banner-section{
+#banner-section {
   margin-top: 5%;
 }
 
-#banner-img{
+#banner-img {
   background-repeat: no-repeat;
   background-size: contain;
   background-origin: content-box;
@@ -140,18 +142,43 @@ textarea{
 }
 
 /* partners section */
-#partners-section div img{
+#partners-section div img {
   object-fit: cover;
   width: 70%;
   transition: var(--transition-delay);
 }
 
-#partners-section div img:hover{
+#partners-section div img:hover {
   transform: scale(1.5);
 }
 
-@media only screen and (max-width: 720px){
-  #partners-section div img{
+@media only screen and (max-width: 720px) {
+  #partners-section div img {
     width: 30%;
   }
+}
+
+/* services section */
+.section-title {
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 43px;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.focus-words {
+  color: var(--focus-words);
+}
+#service-section{
+  margin-top: 10%;
+}
+
+.service-card{
+  transition: var(--transition-delay);
+}
+
+.service-card:hover, .active{
+  transform: scale(1.1);
+  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
 }
