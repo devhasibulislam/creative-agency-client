@@ -1,12 +1,13 @@
 import React from 'react';
 import frame from '../../assets/logos/Frame.png';
 import banner from '../../assets/banner-bg.png';
+import ReactTooltip from 'react-tooltip';
 
 const Banner = () => {
     return (
         <section
             style={{
-                backgroundImage: `url(${banner})`
+                backgroundImage: `url(${banner})`,
             }}
             id='landing-section'
         >
@@ -28,9 +29,14 @@ const Banner = () => {
                             <button
                                 id='matched-btn'
                                 className='btn btn-dark'
+                                data-tip="You are a step ahead to be hired!"
                             >
                                 Hire
                             </button>
+                            <ReactTooltip
+                                place='top'
+                                eventOff='click'
+                            />
                         </div>
                         <div
                             className='col-lg-7 col-12'

@@ -30,6 +30,11 @@ a {
 /* Header section */
 #header-section {
   background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
 }
 
 #header-logo img {
@@ -108,6 +113,7 @@ textarea {
   background-position: bottom left;
   padding-bottom: 10%;
   margin-top: -4.5rem;
+  padding-top: 10rem !important;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -170,36 +176,56 @@ textarea {
 .focus-words {
   color: var(--focus-words);
 }
-#service-section{
+
+#service-section {
   margin-top: 10%;
 }
 
-.service-card{
+.service-card {
   transition: var(--transition-delay);
 }
 
-.service-card:hover, .active{
+.service-card:hover,
+.active {
   transform: scale(1.1);
   box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
 }
 
 /* feedback section */
-#feedback-section{
+#feedback-section {
   margin-top: 10%;
 }
 
-.feedback-card{
+.feedback-card {
   transition: var(--transition-delay);
 }
 
-.feedback-card:hover{
+.feedback-card:hover {
   border-width: 1px;
   border-color: transparent;
   box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
 }
 
 /* slider section */
-#slider-section{
+#slider-section {
   margin-top: 10%;
   background-color: black;
+}
+
+/* menu bar */
+#menubar {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  #menubar {
+    display: inline-block;
+  }
+
+  #header-items {
+    display: none !important;
+  }
+  .header-item:hover {
+    color: var(--primary-color);
+  }
 }
