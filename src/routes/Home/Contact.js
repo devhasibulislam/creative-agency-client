@@ -31,11 +31,26 @@ const Contact = () => {
                     <div
                         className='col-lg-6 col-12'
                     >
-                        <h3>
-                            Let us handle your project, professionally.
+                        <h3
+                            style={{
+                                fontWeight: '600',
+                                fontSize: '34px',
+                                lineHeight: '43px',
+                                marginBottom: '32px'
+                            }}
+                        >
+                            Let us handle your <br />
+                            project, professionally.
                         </h3>
-                        <p className='text-muted'>
-                            With well written codes, we build amazing apps for all platforms, mobile and web apps in general.
+                        <p
+                            className='text-muted'
+                            style={{
+                                fontWeight: '300',
+                                lineHeight: '24.5px'
+                            }}
+                        >
+                            With well written codes, we build amazing apps for all <br />
+                            platforms, mobile and web apps in general.
                         </p>
                     </div>
                     <div
