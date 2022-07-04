@@ -3,6 +3,7 @@
 :root{
   --transition-delay: all .5s linear;
   --primary-color: #FBD062;
+  --default-radius: 5px;
 }
 
 * {
@@ -36,10 +37,9 @@ a {
 }
 
 #authenticate-btn {
-  background-color: black;
   height: 45px;
   width: 134px;
-  border-radius: 5px;
+  border-radius: var(--default-radius);
   transition: var(--transition-delay);
 }
 
@@ -53,4 +53,35 @@ a {
 
 #authenticate-btn:hover a{
   color: black;
+}
+
+/* Contact section */
+#contact-section{
+  background-color: var(--primary-color);
+  padding: 63px 0;
+}
+
+#matched-btn{
+  height: 45px;
+  width: 170px;
+  border-radius: var(--default-radius);
+  transition: var(--transition-delay);
+}
+
+#matched-btn:hover{
+  background-color: white;
+  color: black;
+}
+
+input, textarea{
+  width: 630px;
+  height: 70px;
+  border-radius: var(--default-radius);
+  border: 1px solid #000000;
+  margin-bottom: 16px;
+  padding: 30px;
+}
+
+textarea{
+  height: 277px;
 }
