@@ -4,7 +4,7 @@ import service2 from '../../assets/icons/service2.png';
 import service3 from '../../assets/icons/service3.png';
 
 const Services = () => {
-    const [active, setActive] = useState(true);
+    const [active, setActive] = useState(1);
     const services = [
         {
             icon: service1,
@@ -34,7 +34,8 @@ const Services = () => {
                             className='col-lg-4 col-md-6 col-12'
                         >
                             <div
-                                className='text-center p-5 rounded service-card'
+                                className={`text-center p-5 rounded service-card ${active === index && 'active'}`}
+                                onMouseEnter={() => setActive(index)}
                             >
                                 <div className='mb-3'>
                                     <img
