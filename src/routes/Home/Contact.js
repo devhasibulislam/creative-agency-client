@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../Shared/Footer';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const [spinner, setSpinner] = useState(true);
+
     const handleSentMessage = (event) => {
+        setSpinner(false);
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -20,6 +23,7 @@ const Contact = () => {
                 });
         }
     };
+
     return (
         <section id='contact-section'>
             <div className='container'>
@@ -30,7 +34,7 @@ const Contact = () => {
                         <h3>
                             Let us handle your project, professionally.
                         </h3>
-                        <p>
+                        <p className='text-muted'>
                             With well written codes, we build amazing apps for all platforms, mobile and web apps in general.
                         </p>
                     </div>
@@ -64,13 +68,31 @@ const Contact = () => {
                                     required
                                 ></textarea>
                             </div>
-                            <button
-                                type="submit"
-                                id='matched-btn'
-                                className='btn btn-dark'
-                            >
-                                Send
-                            </button>
+                            {
+                                spinner
+                                    ?
+                                    <button
+                                        type="submit"
+                                        id='matched-btn'
+                                        className='btn btn-dark'
+                                    >
+                                        Send
+                                    </button>
+                                    :
+                                    <button
+                                        className="btn btn-dark"
+                                        type="button"
+                                        id='matched-btn'
+                                        disabled
+                                    >
+                                        <span
+                                            className="spinner-border spinner-border-sm me-2"
+                                            role="status"
+                                            aria-hidden="true"
+                                        />
+                                        Done...
+                                    </button>
+                            }
                         </form>
                     </div>
                 </div>
