@@ -4,8 +4,8 @@ import logo from '../../assets/logos/logo.png';
 
 const Header = () => {
     return (
-        <section className='container'>
-            <div id='header-section' className='d-flex justify-content-between'>
+        <section className='container py-4'>
+            <div id='header-section' className='d-flex flex-lg-row flex-md-row flex-column justify-content-between align-items-center'>
                 <div id='header-logo'>
                     <Link to={'/home'}>
                         <img
