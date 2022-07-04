@@ -6,6 +6,7 @@
 * bootstrap 5.2
 * bootstrap icons
 * firebase
+* react multi carousel
 
 ## Owing this project
 `make sure, have installed VSCODE`
