@@ -1,13 +1,20 @@
 import React from 'react';
-import Footer from '../Shared/Footer';
 import Header from '../Shared/Header';
+import Contact from './Contact';
+import banner from '../../assets/banner-bg.png';
+import Banner from './Banner';
 
 const Landing = () => {
     return (
-        <section>
+        <section
+            id='landing-section'
+            style={{
+                backgroundImage: `url(${banner})`
+            }}
+        >
             <Header />
-            This is Landing page.
-            <Footer />
+            <Banner />
+            <Contact />
         </section>
     );
 };
