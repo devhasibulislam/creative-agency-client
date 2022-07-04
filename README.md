@@ -7,6 +7,7 @@
 * bootstrap icons
 * firebase
 * react multi carousel
+* react tooltip
 
 ## Owing this project
 `make sure, have installed VSCODE`
