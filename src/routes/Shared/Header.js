@@ -57,8 +57,20 @@ const Header = () => {
                         {
                             showMenu
                                 ?
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="30"
+                                    height="30" fill="currentColor"
+                                    className="bi bi-list"
+                                    viewBox="0 0 16 16"
+                                    style={{
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    <path
+                                        fill-rule="evenodd"
+                                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                                    />
                                 </svg>
                                 :
                                 <div style={{
@@ -81,7 +93,9 @@ const Header = () => {
                                                 color: 'black',
                                                 position: 'absolute',
                                                 top: '.5rem',
-                                                right: '.5rem'
+                                                right: '.5rem',
+                                                borderRadius: '50%',
+                                                cursor: 'pointer'
                                             }}
                                         >
                                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
@@ -100,7 +114,7 @@ const Header = () => {
                                         className='p-4 rounded shadow'
                                     >
                                         <nav className='d-flex flex-column align-items-center'>
-                                        <HashLink to={'#landing-section'} className='header-item'>Home</HashLink>
+                                            <HashLink to={'#landing-section'} className='header-item'>Home</HashLink>
                                             <HashLink className='header-item mt-1' to='#service-section'>Services</HashLink>
                                             <HashLink className='header-item mt-1' to='#slider-section'>Projects</HashLink>
                                             <HashLink
