@@ -2,6 +2,10 @@
 
 ## Technologies used here
 * react.js
+* react router dom
+* bootstrap 5.2
+* bootstrap icons
+* firebase
 
 ## Owing this project
 `make sure, have installed VSCODE`
