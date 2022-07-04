@@ -27,6 +27,10 @@ a {
 }
 
 /* Header section */
+#header-section{
+  background-color: var(--primary-color);
+}
+
 #header-logo img {
   height: 47px;
   width: 150px;
@@ -98,7 +102,16 @@ textarea{
 /* landing page seciton */
 #landing-section{
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: bottom left;
+  padding-bottom: 10%;
+  margin-top: -4.5rem;
+}
+
+@media only screen and (max-width: 1024px){
+  #landing-section{
+    margin-top: 0;
+  }
 }
 
 /* banner section */
@@ -124,4 +137,21 @@ textarea{
   background-size: contain;
   background-origin: content-box;
   background-position: bottom;
+}
+
+/* partners section */
+#partners-section div img{
+  object-fit: cover;
+  width: 70%;
+  transition: var(--transition-delay);
+}
+
+#partners-section div img:hover{
+  transform: scale(1.5);
+}
+
+@media only screen and (max-width: 720px){
+  #partners-section div img{
+    width: 30%;
+  }
 }
