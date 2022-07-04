@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logos/logo.png';
 import { HashLink } from 'react-router-hash-link';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(true);
+    const [user] = useAuthState(auth);
+
     return (
         <section id='header-section' className='shadow'>
             <div className='container py-4'>
@@ -42,12 +47,20 @@ const Header = () => {
                         >
                             Dashboard
                         </Link>
-                        <button id='authenticate-btn' className='btn btn-dark'>
-                            <Link
-                                to='/login'
-                            >
-                                Login
-                            </Link>
+                        <button id='authenticate-btn' className={`btn ${user ? 'btn-success' : 'btn-dark'}`}>
+                            {
+                                user
+                                    ?
+                                    <span
+                                        onClick={() => signOut(auth)}
+                                    >Logout</span>
+                                    :
+                                    <Link
+                                        to='/login'
+                                    >
+                                        Login
+                                    </Link>
+                            }
                         </button>
                     </nav>
                     <span
@@ -138,12 +151,20 @@ const Header = () => {
                                             >
                                                 Dashboard
                                             </Link>
-                                            <button id='authenticate-btn' className='btn btn-dark mt-2'>
-                                                <Link
-                                                    to='/login'
-                                                >
-                                                    Login
-                                                </Link>
+                                            <button id='authenticate-btn' className={`btn ${user ? 'btn-success' : 'btn-dark'}`}>
+                                                {
+                                                    user
+                                                        ?
+                                                        <span
+                                                            onClick={() => signOut()}
+                                                        >Logout</span>
+                                                        :
+                                                        <Link
+                                                            to='/login'
+                                                        >
+                                                            Login
+                                                        </Link>
+                                                }
                                             </button>
                                         </nav>
                                     </div>

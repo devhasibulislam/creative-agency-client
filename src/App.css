@@ -74,6 +74,10 @@ a {
   color: black;
 }
 
+#authenticate-btn:hover span{
+  color: black;
+}
+
 /* Contact section */
 #contact-section {
   background-color: var(--primary-color);
