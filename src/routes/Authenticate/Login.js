@@ -4,6 +4,7 @@ import google from '../../assets/icons/google.png';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import useAuthenticate from './useAuthenticate';
 
 const Login = () => {
     const [
@@ -13,7 +14,8 @@ const Login = () => {
     ] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
 
-    if(user) navigate('/');
+    const [token] = useAuthenticate(user);
+    if(token) navigate('/');
 
     return (
         <section className='min-vh-100 min-vw-100 d-flex justify-content-center align-items-center'>
