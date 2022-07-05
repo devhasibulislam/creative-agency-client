@@ -12,10 +12,9 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(true);
     const [user, loading] = useAuthState(auth);
 
-    const { data: userRole, isLoading, refetch } = useQuery('userRole', () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()));
+    const { data: userRole, isLoading } = useQuery('userRole', () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()));
 
     if (isLoading || loading) {
-        refetch();
         return <Loading />
     }
     console.log(userRole?.role);
