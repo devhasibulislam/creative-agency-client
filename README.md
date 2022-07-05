@@ -8,6 +8,8 @@
 * firebase
 * react multi carousel
 * react tooltip
+* axios
+* react query
 
 ## Owing this project
 `make sure, have installed VSCODE`
