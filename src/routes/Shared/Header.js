@@ -5,10 +5,20 @@ import { HashLink } from 'react-router-hash-link';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
+import { useQuery } from 'react-query';
+import Loading from './Loading';
 
 const Header = () => {
     const [showMenu, setShowMenu] = useState(true);
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+
+    const { data: userRole, isLoading, refetch } = useQuery('userRole', () => fetch(`http://localhost:5000/user/${user?.email}`).then(res => res.json()));
+
+    if (isLoading || loading) {
+        refetch();
+        return <Loading />
+    }
+    console.log(userRole?.role);
 
     return (
         <section id='header-section' className='shadow'>
@@ -32,27 +42,39 @@ const Header = () => {
                             style={{ whiteSpace: 'nowrap' }}
                         >Contact us</HashLink>
                         {/* available only for admin */}
-                        <Link
-                            to='/admin'
-                            title='admin dashboard'
-                            className='header-item'
-                        >
-                            Dashboard
-                        </Link>
+                        {
+                            userRole?.role === 'admin'
+                            &&
+                            <Link
+                                to='/admin'
+                                title='admin dashboard'
+                                className='header-item'
+                            >
+                                Dashboard
+                            </Link>
+                        }
                         {/* available only for customer */}
-                        <Link
-                            to='/customer'
-                            title='customer dashboard'
-                            className='header-item'
-                        >
-                            Dashboard
-                        </Link>
+                        {
+                            (user && userRole?.role !== 'admin')
+                            &&
+                            <Link
+                                to='/customer'
+                                title='customer dashboard'
+                                className='header-item'
+                            >
+                                Dashboard
+                            </Link>
+                        }
                         <button id='authenticate-btn' className={`btn ${user ? 'btn-success' : 'btn-dark'}`}>
                             {
                                 user
                                     ?
                                     <span
-                                        onClick={() => signOut(auth)}
+                                        onClick={async () => {
+                                            localStorage.removeItem('accessToken');
+                                            window.location.reload();
+                                            await signOut(auth);
+                                        }}
                                     >Logout</span>
                                     :
                                     <Link
@@ -81,7 +103,7 @@ const Header = () => {
                                     }}
                                 >
                                     <path
-                                        fill-rule="evenodd"
+                                        fillRule="evenodd"
                                         d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
                                     />
                                 </svg>
@@ -136,27 +158,38 @@ const Header = () => {
                                                 style={{ whiteSpace: 'nowrap' }}
                                             >Contact us</HashLink>
                                             {/* available only for admin */}
-                                            <Link
-                                                to='/admin'
-                                                title='admin dashboard'
-                                                className='header-item mt-1'
-                                            >
-                                                Dashboard
-                                            </Link>
+                                            {
+                                                userRole?.role === 'admin'
+                                                &&
+                                                <Link
+                                                    to='/admin'
+                                                    title='admin dashboard'
+                                                    className='header-item mt-2'
+                                                >
+                                                    Dashboard
+                                                </Link>
+                                            }
                                             {/* available only for customer */}
-                                            <Link
-                                                to='/customer'
-                                                title='customer dashboard'
-                                                className='header-item mt-1'
-                                            >
-                                                Dashboard
-                                            </Link>
-                                            <button id='authenticate-btn' className={`btn ${user ? 'btn-success' : 'btn-dark'}`}>
+                                            {
+                                                (user && userRole?.role !== 'admin')
+                                                &&
+                                                <Link
+                                                    to='/customer'
+                                                    title='customer dashboard'
+                                                    className='header-item mt-1'
+                                                >
+                                                    Dashboard
+                                                </Link>
+                                            }
+                                            <button id='authenticate-btn' className={`btn ${user ? 'btn-success' : 'btn-dark'} mt-2`}>
                                                 {
                                                     user
                                                         ?
                                                         <span
-                                                            onClick={() => signOut()}
+                                                            onClick={async () => {
+                                                                localStorage.removeItem('accessToken');
+                                                                await signOut(auth);
+                                                            }}
                                                         >Logout</span>
                                                         :
                                                         <Link
