@@ -30,7 +30,7 @@ const Panel = ({ title }) => {
                     </Link>
                 </div>
                 <div className='mt-lg-0 mt-2'>
-                    <h6 className='border-bottom rounded text-warning text-gradient shadow-sm px-3 py-1 mb-0'>{title}</h6>
+                    <h6 className='border-bottom rounded text-dark text-gradient shadow-sm px-3 py-1 mb-0'>{title}</h6>
                 </div>
                 <div className='mt-lg-0 mt-2'>
                     <h6 className='border-bottom border-warning border-3 rounded-circle'>{user?.displayName}</h6>
