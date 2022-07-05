@@ -2,9 +2,9 @@ import React from 'react';
 
 const Review = () => {
     return (
-        <div>
+        <section>
             This is review route.
-        </div>
+        </section>
     );
 };
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 const ShowServices = () => {
     return (
-        <div>
+        <section>
             This route shows services.
-        </div>
+        </section>
     );
 };
 

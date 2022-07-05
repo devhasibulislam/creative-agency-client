@@ -74,7 +74,7 @@ a {
   color: black;
 }
 
-#authenticate-btn:hover span{
+#authenticate-btn:hover span {
   color: black;
 }
 
@@ -229,6 +229,7 @@ textarea {
   #header-items {
     display: none !important;
   }
+
   .header-item:hover {
     color: var(--primary-color);
   }
@@ -267,20 +268,20 @@ textarea {
 
   0%,
   100% {
-      margin-right: 0
+    margin-right: 0
   }
 
   25% {
-      margin-right: 250px;
+    margin-right: 250px;
 
   }
 
   50% {
-      z-index: 2
+    z-index: 2
   }
 
   75% {
-      margin-right: -250px;
+    margin-right: -250px;
   }
 }
 
@@ -288,14 +289,14 @@ textarea {
 
   0%,
   100% {
-      margin-left: 0
+    margin-left: 0
   }
 
   25% {
-      margin-left: 250px;
+    margin-left: 250px;
   }
 
   75% {
-      margin-left: -250px;
+    margin-left: -250px;
   }
 }

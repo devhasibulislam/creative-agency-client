@@ -11,7 +11,10 @@ const Panel = ({ title }) => {
         return <Loading />
     }
     return (
-        <section className='py-2'>
+        <section
+            className='py-2'
+            style={{ backgroundColor: '#f1f3f4' }}
+        >
             <div className='d-flex flex-lg-row flex-column justify-content-lg-between align-items-center mx-lg-5 mx-0 mt-lg-0 mt-3'>
                 <div>
                     <Link to={'/'}>
@@ -27,7 +30,7 @@ const Panel = ({ title }) => {
                     </Link>
                 </div>
                 <div className='mt-lg-0 mt-2'>
-                    <h6 className='border-bottom rounded text-warning text-gradient shadow-sm px-2 py-1'>{title}</h6>
+                    <h6 className='border-bottom rounded text-warning text-gradient shadow-sm px-3 py-1 mb-0'>{title}</h6>
                 </div>
                 <div className='mt-lg-0 mt-2'>
                     <h6 className='border-bottom border-warning border-3 rounded-circle'>{user?.displayName}</h6>
