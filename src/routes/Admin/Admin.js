@@ -4,7 +4,7 @@ import Sidebar from '../Shared/Sidebar';
 import { Outlet } from 'react-router-dom';
 
 const Admin = () => {
-    const [midTitle, setMidTitle] = useState('');
+    const [midTitle, setMidTitle] = useState('Service List');
 
     const menuItems = [
         {
@@ -34,7 +34,7 @@ const Admin = () => {
     return (
         <section>
             <Panel title={midTitle} />
-            <Sidebar menuItems={menuItems} />
+            <Sidebar menuItems={menuItems} setMidTitle={setMidTitle} />
             <Outlet />
         </section>
     );

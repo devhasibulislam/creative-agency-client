@@ -4,7 +4,7 @@ import Panel from '../Shared/Panel';
 import Sidebar from '../Shared/Sidebar';
 
 const Customer = () => {
-    const [midTitle, setMidTitle] = useState('');
+    const [midTitle, setMidTitle] = useState('Order');
 
     const menuItems = [
         {
