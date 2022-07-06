@@ -24,13 +24,13 @@ const AddService = () => {
             const { data } = await axios.post('http://localhost:5000/service', {
                 name: serviceName,
                 description: serviceDetail,
-                icon: response?.data?.url
+                icon: response?.data?.url,
+                state: 'pending'
             });
             if (data?.acknowledged) {
                 event.target.reset();
             }
         }
-
     };
 
     return (
