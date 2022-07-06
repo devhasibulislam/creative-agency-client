@@ -1,6 +1,38 @@
+import axios from 'axios';
 import React from 'react';
 
 const AddService = () => {
+    const imageStorageKey = '104449008997c085d936fea4a24f3297';
+
+    const handleAddService = async (event) => {
+        event.preventDefault();
+
+        const serviceName = event.target.serviceName.value;
+        const serviceDetail = event.target.serviceDetail.value;
+        const serviceIcon = event.target.serviceIcon.files[0];
+        const formData = new FormData();
+        formData.append('image', serviceIcon);
+        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageStorageKey}`;
+        const request = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+        const response = await request.json();
+        console.log(response);
+
+        if (response?.success) {
+            const { data } = await axios.post('http://localhost:5000/service', {
+                name: serviceName,
+                description: serviceDetail,
+                icon: response?.data?.url
+            });
+            if (data?.acknowledged) {
+                event.target.reset();
+            }
+        }
+
+    };
+
     return (
         <section
             id='review-section'
@@ -8,11 +40,11 @@ const AddService = () => {
         >
             <div className='container'>
                 <div>
-                    <form>
+                    <form onSubmit={handleAddService}>
                         <div>
                             <input
                                 type="text"
-                                name="name"
+                                name="serviceName"
                                 id="name"
                                 placeholder='Service title...'
                                 required
@@ -20,7 +52,7 @@ const AddService = () => {
                         </div>
                         <div>
                             <textarea
-                                name="message"
+                                name="serviceDetail"
                                 className="description-box"
                                 placeholder='Product detail...'
                                 required
@@ -33,7 +65,7 @@ const AddService = () => {
                                 <div className='position-relative'>
                                     <input
                                         type="file"
-                                        name="icon"
+                                        name="serviceIcon"
                                         id="icon"
                                         accept="image/png, image/jpeg, image/jpg"
                                         required
