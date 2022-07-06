@@ -384,11 +384,11 @@ input[type=file] {
 }
 
 /* email selector */
-#mail-selector {
+#mail-selector, #service_selector {
   transition: var(--transition-delay);
   cursor: pointer;
 }
 
-#mail-selector:hover {
+#mail-selector:hover, #service_selector:hover {
   color: rgba(0, 0, 0, 0.5) !important;
 }
