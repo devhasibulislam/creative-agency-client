@@ -50,14 +50,14 @@ const MakeAdmin = () => {
                                     visibility
                                     &&
                                     <div
-                                        className='position-absolute top-100 start-0  w-100'
+                                        className='position-absolute top-100 start-0  w-100  bg-light rounded-2 shadow'
                                         style={{
                                             height: '300px',
                                             overflowY: 'scroll',
                                             padding: '1rem .5rem',
                                             boxSizing: 'border-box',
                                             borderRadius: '5px',
-                                        }}
+                                        }}  
                                     >
                                         {
                                             getEmail.map(email => <p
