@@ -69,7 +69,8 @@ const Sidebar = ({ menuItems, setMidTitle }) => {
                             }}
                             className='position-absolute'
                         />
-                        {menuItems.map(menuItem => <Link
+                        {menuItems.map((menuItem, index) => <Link
+                        key={index}
                             to={menuItem?.path}
                             onClick={() => {
                                 setMidTitle(menuItem?.name);
