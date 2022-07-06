@@ -19,7 +19,7 @@ const Review = () => {
             message: reviewerMessage
         };
 
-        const { data } = await axios.put(`https://creative-agency-server.vercel.app/review/${reviewerEmail}`, review);
+        const { data } = await axios.put(`https://cas-creative-agency-server.herokuapp.com/review/${reviewerEmail}`, review);
 
         if(data?.acknowledged){
             event.target.reset();

@@ -22,7 +22,7 @@ const AddService = () => {
         console.log(response);
 
         if (response?.success) {
-            const { data } = await axios.post('https://creative-agency-server.vercel.app/service', {
+            const { data } = await axios.post('https://cas-creative-agency-server.herokuapp.com/service', {
                 name: serviceName,
                 description: serviceDetail,
                 icon: response?.data?.url,

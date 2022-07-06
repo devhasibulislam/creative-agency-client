@@ -6,10 +6,10 @@ import axios from 'axios';
 const ServiceList = () => {
     const [collapse, setCollapse] = useState(false);
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://creative-agency-server.vercel.app/orders').then(res => res.json()));
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://cas-creative-agency-server.herokuapp.com/orders').then(res => res.json()));
 
     const handleState = async (state, id) => {
-        const { data } = await axios.put(`https://creative-agency-server.vercel.app/order/${id}`, { state: state });
+        const { data } = await axios.put(`https://cas-creative-agency-server.herokuapp.com/order/${id}`, { state: state });
         console.log(data);
         refetch();
     };
