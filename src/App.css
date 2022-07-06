@@ -365,20 +365,30 @@ input[type=file] {
 }
 
 /* service card section */
-#service-card{
+#service-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-@media only screen and (max-width: 1024px){
-  #service-card{
+@media only screen and (max-width: 1024px) {
+  #service-card {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media only screen and (max-width: 720px){
-  #service-card{
+@media only screen and (max-width: 720px) {
+  #service-card {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/* email selector */
+#mail-selector {
+  transition: var(--transition-delay);
+  cursor: pointer;
+}
+
+#mail-selector:hover {
+  color: rgba(0, 0, 0, 0.5) !important;
 }
