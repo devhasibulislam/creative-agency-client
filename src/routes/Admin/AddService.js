@@ -10,6 +10,7 @@ const AddService = () => {
         const serviceName = event.target.serviceName.value;
         const serviceDetail = event.target.serviceDetail.value;
         const serviceIcon = event.target.serviceIcon.files[0];
+        
         const formData = new FormData();
         formData.append('image', serviceIcon);
         const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageStorageKey}`;
