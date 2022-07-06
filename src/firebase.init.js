@@ -6,12 +6,12 @@ import {getAuth} from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAr3cx5Gkh4GXPsAKu6oPLBTRnRQ8hc-eo",
-  authDomain: "creative-agency-43bbc.firebaseapp.com",
-  projectId: "creative-agency-43bbc",
-  storageBucket: "creative-agency-43bbc.appspot.com",
-  messagingSenderId: "473334324516",
-  appId: "1:473334324516:web:f6192a515370483d8a67b1",
+  apiKey: "process.env.REACT_APP_apiKey",
+  authDomain: "process.env.REACT_APP_authDomain",
+  projectId: "process.env.REACT_APP_projectId",
+  storageBucket: "process.env.REACT_APP_storageBucket",
+  messagingSenderId: "process.env.REACT_APP_messagingSenderId",
+  appId: "process.env.REACT_APP_appId",
 };
 
 // Initialize Firebase
