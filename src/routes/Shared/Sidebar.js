@@ -7,6 +7,7 @@ const Sidebar = ({ menuItems, setMidTitle }) => {
         <section
             className='position-fixed'
             id='sidebar-btn'
+            style={{zIndex: '9'}}
         >
             <div className='position-relative'>
                 {
@@ -17,7 +18,7 @@ const Sidebar = ({ menuItems, setMidTitle }) => {
                             width="30"
                             height="30"
                             fill="currentColor"
-                            class="bi bi-layout-text-sidebar"
+                            className="bi bi-layout-text-sidebar"
                             viewBox="0 0 16 16"
                             onClick={() => setVisible(!visible)}
                         >
@@ -34,7 +35,7 @@ const Sidebar = ({ menuItems, setMidTitle }) => {
                             width="30"
                             height="30"
                             fill="currentColor"
-                            class="bi bi-layout-text-sidebar-reverse"
+                            className="bi bi-layout-text-sidebar-reverse"
                             viewBox="0 0 16 16"
                             onClick={() => setVisible(!visible)}
                         >
@@ -108,7 +109,7 @@ export default Sidebar;
         width="30" 
         height="30" 
         fill="currentColor" 
-        class="bi bi-layout-text-sidebar-reverse" 
+        className="bi bi-layout-text-sidebar-reverse" 
         viewBox="0 0 16 16"
     >
         <path 

@@ -22,7 +22,7 @@ const ShowServices = () => {
                             </div>
                             <div>
                                 <span
-                                    class="badge rounded-pill text-bg-danger"
+                                    className="badge rounded-pill text-bg-danger"
                                     style={{fontWeight: '500'}}
                                 >
                                     Pending
