@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import service1 from '../../assets/icons/service1.png';
 import Loading from '../Shared/Loading';
 
 const ShowServices = () => {
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:5000/services').then(res => res.json()));
+    const [collapse, setCollapse] = useState(false);
+    const { data: orders, isLoading } = useQuery('orders', () => fetch('http://localhost:5000/orders').then(res => res.json()));
 
     if (isLoading) {
         return <Loading />
@@ -15,7 +15,7 @@ const ShowServices = () => {
             <div className='container'>
                 <div id='service-card'>
                     {
-                        services?.map(service => <div
+                        orders?.map(service => <div
                             key={service._id}
                             className='p-5 dashboard-section shadow-sm'>
                             <div className='d-flex justify-content-between mb-3'>
@@ -32,19 +32,39 @@ const ShowServices = () => {
                                 </div>
                                 <div>
                                     <span
-                                        className="badge rounded-pill text-bg-danger"
+                                        className={`${(service?.state === 'pending' && 'badge rounded-pill text-bg-danger') || (service?.state === 'ongoing' && 'badge rounded-pill text-bg-warning') || (service?.state === 'done' && 'badge rounded-pill text-bg-success')}`}
                                         style={{ fontWeight: '500' }}
                                     >
-                                        Pending
+                                        {service?.state}
                                     </span>
                                 </div>
                             </div>
                             <div>
                                 <h4>
-                                    Web & Mobile design
+                                    {service?.course}
                                 </h4>
                                 <p className='text-muted'>
-                                    We craft stunning and amazing web UI, using a well drrafted UX to fit your product.
+                                    {
+                                        collapse
+                                        ?
+                                        service?.detail
+                                        :
+                                        service?.detail.slice(0, 50)
+                                    }
+                                    <br />
+                                    <button
+                                        type="button"
+                                        className="btn btn-secondary btn-sm mt-3"
+                                        onClick={()=>setCollapse(!collapse)}
+                                    >
+                                        {
+                                            collapse
+                                            ?
+                                            'Read less...'
+                                            :
+                                            'Read more...'
+                                        }
+                                    </button>
                                 </p>
                             </div>
                         </div>)
