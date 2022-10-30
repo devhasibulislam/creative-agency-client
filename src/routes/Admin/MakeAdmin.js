@@ -11,14 +11,14 @@ const MakeAdmin = () => {
         event.preventDefault();
 
         const customerEmail = email;
-        const { data } = await axios.put(`https://cas-creative-agency-server.herokuapp.com/email/${customerEmail}`, { role: 'admin' });
+        const { data } = await axios.put(`https://creative-agency-ca-server.onrender.com/email/${customerEmail}`, { role: 'admin' });
 
         if (data?.modifiedCount !== 0) {
             setEmail('');
         }
     };
 
-    const { data: emails, isLoading, refetch } = useQuery('emails', () => fetch('https://cas-creative-agency-server.herokuapp.com/emails').then(res => res.json()));
+    const { data: emails, isLoading, refetch } = useQuery('emails', () => fetch('https://creative-agency-ca-server.onrender.com/emails').then(res => res.json()));
 
     if (isLoading) {
         return <Loading />

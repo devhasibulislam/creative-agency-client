@@ -2,7 +2,7 @@
 
 ## Important links:
 * `client side live` [click here](https://creative-agency-43bbc.web.app/)
-* `server side live` [click here](https://cas-creative-agency-server.herokuapp.com/)
+* `server side live` [click here](https://creative-agency-ca-server.onrender.com/)
 * `client side repo` [click here](https://github.com/hasibulislam999/creative-agency-client)
 * `server side repo` [click here](https://github.com/hasibulislam999/creative-agency-server)
 

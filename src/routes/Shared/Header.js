@@ -12,7 +12,7 @@ const Header = () => {
     const [showMenu, setShowMenu] = useState(true);
     const [user, loading] = useAuthState(auth);
 
-    const { data: userRole, isLoading } = useQuery('userRole', () => fetch(`https://cas-creative-agency-server.herokuapp.com/user/${user?.email}`).then(res => res.json()));
+    const { data: userRole, isLoading } = useQuery('userRole', () => fetch(`https://creative-agency-ca-server.onrender.com/user/${user?.email}`).then(res => res.json()));
 
     if (isLoading || loading) {
         return <Loading />

@@ -33,7 +33,7 @@ const Order = () => {
         console.log(response);
 
         if (response?.success) {
-            const { data } = await axios.post('https://cas-creative-agency-server.herokuapp.com/order', {
+            const { data } = await axios.post('https://creative-agency-ca-server.onrender.com/order', {
                 name: customerName,
                 email: customerEmail,
                 course: courseName,
@@ -50,7 +50,7 @@ const Order = () => {
 
     };
 
-    const { data: courses, isLoading } = useQuery('courses', () => fetch('https://cas-creative-agency-server.herokuapp.com/courses').then(res => res.json()));
+    const { data: courses, isLoading } = useQuery('courses', () => fetch('https://creative-agency-ca-server.onrender.com/courses').then(res => res.json()));
 
     if (loading || isLoading) {
         return <Loading />
